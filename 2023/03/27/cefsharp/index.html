@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>CefSharp使用 | Hexo</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="多窗口cookie隔离这个问题困扰了我一整天,搜遍百度,CSDN,人都搜麻了,没有找到有效的方法.最后查看了CefSharp的官方文档,才找到问题所在.首先得设置CefSettings.RootCachePath.代码如下: 1234CefSettings cfsettings &#x3D; new CefSettings();cfsettings.RootCachePath &#x3D; Application.S">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CefSharp使用">
+<meta property="og:url" content="https://boz03.gitee.io/boz/2023/03/27/cefsharp/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="多窗口cookie隔离这个问题困扰了我一整天,搜遍百度,CSDN,人都搜麻了,没有找到有效的方法.最后查看了CefSharp的官方文档,才找到问题所在.首先得设置CefSettings.RootCachePath.代码如下: 1234CefSettings cfsettings &#x3D; new CefSettings();cfsettings.RootCachePath &#x3D; Application.S">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-03-27T09:38:59.000Z">
+<meta property="article:modified_time" content="2023-03-27T10:25:58.258Z">
+<meta property="article:author" content="boz03">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/boz/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">boz03</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/boz/">Home</a></li>
+				        
+							<li><a href="/boz/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">I&#39;m a developer.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/boz/">Home</a></li>
+		        
+					<li><a href="/boz/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-cefsharp" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/boz/2023/03/27/cefsharp/" class="article-date">
+  	<time datetime="2023-03-27T09:38:59.000Z" itemprop="datePublished">2023-03-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CefSharp使用
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="多窗口cookie隔离"><a href="#多窗口cookie隔离" class="headerlink" title="多窗口cookie隔离"></a>多窗口cookie隔离</h2><p>这个问题困扰了我一整天,搜遍百度,CSDN,人都搜麻了,没有找到有效的方法.最后查看了CefSharp的官方文档,才找到问题所在.<br>首先得设置CefSettings.RootCachePath.代码如下:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CefSettings cfsettings = <span class="keyword">new</span> CefSettings();</span><br><span class="line">cfsettings.RootCachePath = Application.StartupPath + <span class="string">$@&quot;\Cache\&quot;</span>;</span><br><span class="line">cfsettings.PersistSessionCookies = <span class="literal">true</span>;</span><br><span class="line">Cef.Initialize(cfsettings);</span><br></pre></td></tr></table></figure>
+<p>RootCachePath如果不设置的话,浏览器开启的是隐身模式,就是说操作内容可能会保存但是不能保存登录状态,就算设置了单独的缓存文件夹也没有用.<br>然后是Cef.Initialize()这个只能在浏览器初始化之前调用,且只能调用一次.<br>这些设置完成之后,就可以开始设置不同的缓存路径来隔离多浏览器.代码如下:</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> requestContext = RequestContext</span><br><span class="line">.Configure()</span><br><span class="line">.WithProxyServer(proxyserver)</span><br><span class="line">.WithCachePath(Path.Combine(Application.StartupPath, <span class="string">&quot;Cache\\&quot;</span> + path))</span><br><span class="line">.Create();</span><br><span class="line">ChromiumWebBrowser chromiumWebBrowser1 = <span class="keyword">new</span> ChromiumWebBrowser()</span><br><span class="line">chromiumWebBrowser1.RequestContext = requestContext;</span><br></pre></td></tr></table></figure>
+<p>这里多窗口的缓存路径得是RootCachePath的子路径.如果放在这个路径外会怎么样,我没有去尝试.<br>然后关于代理的设置,一般来说代理都是一个ip加端口,http的可以直接传进WithProxyServer(),也可以把ip和端口分开传入,端口需要是int类型的.https和socks5方式的我没有试过,所以不写.至于需要账号密码的,cefsharp的官方有简单案例.</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/boz/2023/03/27/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/boz/2023/03/27/hello/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">一些Api</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2023 boz03
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/boz/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/boz/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
