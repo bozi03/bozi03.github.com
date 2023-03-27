@@ -148,6 +148,64 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-csharp代理测速" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/03/27/csharp%E4%BB%A3%E7%90%86%E6%B5%8B%E9%80%9F/" class="article-date">
+  	<time datetime="2023-03-27T15:10:03.000Z" itemprop="datePublished">2023-03-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/03/27/csharp%E4%BB%A3%E7%90%86%E6%B5%8B%E9%80%9F/">
+        csharp代理测速
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="CSharp中为代理测速"><a href="#CSharp中为代理测速" class="headerlink" title="CSharp中为代理测速"></a>CSharp中为代理测速</h2><ol>
+<li>需要使用到TCPClient,Stopwatch</li>
+<li>代码如下: <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">TcpClient tcpClient = <span class="keyword">new</span> TcpClient();</span><br><span class="line"><span class="keyword">var</span> address = ProxyServer.Split(<span class="string">&#x27;:&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> stopWatch = <span class="keyword">new</span> Stopwatch(); <span class="comment">//创建一个Stopwatch实例</span></span><br><span class="line"></span><br><span class="line">stopWatch.Start();</span><br><span class="line"><span class="keyword">try</span></span><br><span class="line">&#123;</span><br><span class="line">    tcpClient.Connect(address[<span class="number">0</span>], <span class="built_in">int</span>.Parse(address[<span class="number">1</span>]));</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span> (Exception)</span><br><span class="line">&#123;</span><br><span class="line">    Console.Writeline(<span class="string">&quot;超时&quot;</span>);</span><br><span class="line"><span class="comment">//throw;</span></span><br><span class="line">&#125;</span><br><span class="line">stopWatch.Stop();</span><br><span class="line"> Console.Writeline(<span class="string">$&quot;<span class="subst">&#123;stopWatch.ElapsedMilliseconds&#125;</span>ms&quot;</span>);</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-git" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
