@@ -148,6 +148,120 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-csharp常用" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/03/28/csharp%E5%B8%B8%E7%94%A8/" class="article-date">
+  	<time datetime="2023-03-28T11:26:28.000Z" itemprop="datePublished">2023-03-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/03/28/csharp%E5%B8%B8%E7%94%A8/">
+        csharp常用
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="文件和路径"><a href="#文件和路径" class="headerlink" title="文件和路径"></a>文件和路径</h2><ol>
+<li>程序运行的目录 <code>Application.StartupPath</code></li>
+</ol>
+<h2 id="winform-Owner"><a href="#winform-Owner" class="headerlink" title="winform Owner"></a>winform Owner</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Form2 fm = <span class="keyword">new</span> Form2()</span><br><span class="line">fm.Owner = <span class="keyword">this</span></span><br></pre></td></tr></table></figure>
+<p>在窗体里创建子窗体并在子窗体的Owner传入,子窗体就可以通过Owner调用父窗体</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/03/28/hexo/" class="article-date">
+  	<time datetime="2023-03-28T07:36:07.000Z" itemprop="datePublished">2023-03-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/03/28/hexo/">
+        hexo
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="hexo博客"><a href="#hexo博客" class="headerlink" title="hexo博客"></a>hexo博客</h2><p>_config.yml文件url域名错误会导致css,js等文件无法访问.都是通过域名来访问的.</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-csharp代理测速" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -179,7 +293,7 @@
       
         <h2 id="CSharp中为代理测速"><a href="#CSharp中为代理测速" class="headerlink" title="CSharp中为代理测速"></a>CSharp中为代理测速</h2><ol>
 <li>需要使用到TCPClient,Stopwatch</li>
-<li>代码如下: <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">TcpClient tcpClient = <span class="keyword">new</span> TcpClient();</span><br><span class="line"><span class="keyword">var</span> address = ProxyServer.Split(<span class="string">&#x27;:&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> stopWatch = <span class="keyword">new</span> Stopwatch(); <span class="comment">//创建一个Stopwatch实例</span></span><br><span class="line"></span><br><span class="line">stopWatch.Start();</span><br><span class="line"><span class="keyword">try</span></span><br><span class="line">&#123;</span><br><span class="line">    tcpClient.Connect(address[<span class="number">0</span>], <span class="built_in">int</span>.Parse(address[<span class="number">1</span>]));</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span> (Exception)</span><br><span class="line">&#123;</span><br><span class="line">    Console.Writeline(<span class="string">&quot;超时&quot;</span>);</span><br><span class="line"><span class="comment">//throw;</span></span><br><span class="line">&#125;</span><br><span class="line">stopWatch.Stop();</span><br><span class="line"> Console.Writeline(<span class="string">$&quot;<span class="subst">&#123;stopWatch.ElapsedMilliseconds&#125;</span>ms&quot;</span>);</span><br></pre></td></tr></table></figure></li>
+<li>代码如下: <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> proxyServer=<span class="string">&quot;175.147.119.158:4213&quot;</span>;</span><br><span class="line">TcpClient tcpClient = <span class="keyword">new</span> TcpClient();</span><br><span class="line"><span class="keyword">var</span> address = proxyServer.Split(<span class="string">&#x27;:&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> stopWatch = <span class="keyword">new</span> Stopwatch();</span><br><span class="line"></span><br><span class="line">stopWatch.Start();</span><br><span class="line"><span class="keyword">try</span></span><br><span class="line">&#123;</span><br><span class="line">    tcpClient.Connect(address[<span class="number">0</span>], <span class="built_in">int</span>.Parse(address[<span class="number">1</span>]));</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span> (Exception)</span><br><span class="line">&#123;</span><br><span class="line">    Console.Writeline(<span class="string">&quot;超时&quot;</span>);</span><br><span class="line"><span class="comment">//throw;</span></span><br><span class="line">&#125;</span><br><span class="line">stopWatch.Stop();</span><br><span class="line"> Console.Writeline(<span class="string">$&quot;<span class="subst">&#123;stopWatch.ElapsedMilliseconds&#125;</span>ms&quot;</span>);</span><br></pre></td></tr></table></figure></li>
 </ol>
 
       
